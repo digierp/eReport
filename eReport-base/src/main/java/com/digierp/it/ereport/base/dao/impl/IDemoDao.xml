@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.digierp.it.ereport.base.dao.IDemoDao" >
+  
+  <sql id="demo_query_Base" >
+       SELECT 
+		    id AS id, name AS name, addr AS addr
+		FROM
+		    demo
+  </sql>
+  
+  <sql id="demo_query_condition" >
+  		<where>
+  			<if test="id != null">
+  				and id like '%'|| #{id,jdbcType=INTEGER} || '%'
+  			</if>
+  			<if test="name != null">
+  				and name like '%'|| #{name,jdbcType=VARCHAR} || '%'
+  			</if>
+  			<if test="addr != null">
+  				and addr like '%'|| #{addr,jdbcType=VARCHAR} || '%'
+  			</if>
+  		</where>
+  </sql>
+  
+  <select id="findDemo" resultType="com.digierp.it.ereport.base.entity.Demo" parameterType="java.lang.Integer" >
+	    <include refid="demo_query_Base" />
+	    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="findDemos" resultType="com.digierp.it.ereport.base.entity.Demo" >
+  		<include refid="demo_query_Base" />
+  		<include refid="demo_query_condition" />
+  </select>
+  
+  <delete id="deleteDemo" parameterType="java.lang.Integer" >
+	    delete from demo
+	    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="createDemo" parameterType="com.digierp.it.ereport.base.entity.Demo" >
+  		insert into demo
+		  (id,
+		   name,
+		   addr
+		  )
+		values
+		  (#{id,jdbcType=INTEGER},
+		   #{name,jdbcType=VARCHAR},
+		   #{addr,jdbcType=VARCHAR}
+		   )
+  </insert>
+ 
+  <update id="updateDemo" parameterType="com.digierp.it.ereport.base.entity.Demo" >
+	    update demo
+		    set name = #{name,jdbcType=VARCHAR},
+		      addr = #{addr,jdbcType=VARCHAR}
+	    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+</mapper>

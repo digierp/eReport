@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>eReport-base</artifactId>
+	<packaging>jar</packaging>
+	<name>eReport Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>com.digierp.it</groupId>
+		<artifactId>eReport-parent</artifactId>
+		<version>1.0</version>
+		<relativePath></relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-extension-providers</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-bindings-soap</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>eReport-base</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>

@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.digierp.it</groupId>
+	<artifactId>eReport-parent</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0</version>
+	<name>eReport Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>4.3.9.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>4.3.9.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-rs-extension-providers</artifactId>
+				<version>3.1.11</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-bindings-soap</artifactId>
+				<version>3.1.11</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>3.4.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>1.3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-jaxrs</artifactId>
+				<version>1.9.13</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.38</version>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<finalName>eReport-parent</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.6.1</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+			</plugins>
+
+		</pluginManagement>
+
+	</build>
+
+</project>
