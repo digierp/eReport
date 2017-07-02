@@ -14,7 +14,8 @@
 		</jaxrs:providers>
 	<!-- 	<jaxrs:inInterceptors>
 			<ref bean="privilegeInterceptor"/>
-		</jaxrs:inInterceptors> -->
+		</jaxrs:inInterceptors> 
+		-->
 	</jaxrs:server>
 	
 	
